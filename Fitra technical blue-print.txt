@@ -1,0 +1,44 @@
+#Fitra technical Blueprint
+
+**Index Page**-- index.liquid
+
+-Title
+-Information Headline
+-Product Description
+-Product Option selection
+-add-to-cart button
+-Large copy element
+-small copy list
+-Main product image
+-Cart Icon
+  -2 states: empty & filled
+  - Empty: grey icon, "Your cart is empty" on hover
+  - Filled: red icon w/ numeral, "Your Cart" on hover
+
+
+**Cart Page** -- cart.liquid
+2 states:
+
+1. Empty
+    Cart title and item count
+    Close button in place of cart icon
+   'Your cart is empty' copy
+    Back button
+   
+
+2. Filled
+   Order summary headline
+   Line items w/ remove button
+   shipping line
+   Subtotal line
+   Checkout button
+   Large copy Element
+   Small copy element
+
+**404 Page** --404.liquid--
+Snippet that is included on every template not listed above
+Main image
+Cart Icon
+Single copy element
+Link to the homepage
+
