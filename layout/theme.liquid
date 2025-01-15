@@ -254,7 +254,7 @@
         }
       }
     {% endstyle %}
-
+    {{ 'index.css'| asset_url | stylesheet_tag }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
@@ -307,13 +307,25 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% sections 'header-group' %}
-
+    {% if template!=='cart' %}
+        <a href="/cart" class="link-to-cart">
+          {% if cart.empty? %}
+          <p>{{'general.cart.link.empty' | t}}</p>
+          {% else %}
+          <p>{{'general.cart.link.filled' | t}}</p> <span class="cart-item-count">{{cart.item_count}}</span>
+          {% endif %}
+        </a>
+    {% else %}
+     <a href="/" class="link-to-home">
+        Link to home
+     </a>
+    {% endif %}
+   
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
 
-    {% sections 'footer-group' %}
+   
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>

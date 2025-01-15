@@ -9,6 +9,19 @@
  */
 {
   "general": {
+    "product":{
+      "copy":{
+        "headline":"Hassle free fitness tracking.",
+        "description_headline":"Information"
+      },
+      "details_list":{
+        "item1":"Companion apps for IOS & Android",
+        "item2":"Preorders begin shipping this March",
+      },
+      "form":{
+        "submit":"Preorder"
+      },
+    },
     "password_page": {
       "login_form_heading": "Enter store using password:",
       "login_password_button": "Enter using password",
@@ -51,7 +64,11 @@
     "cart": {
       "view": "View cart ({{ count }})",
       "view_empty_cart": "View cart",
-      "item_added": "Item added to your cart"
+      "item_added": "Item added to your cart",
+      "link":{
+          "filled":"Link to your cart",
+          "empty":"Your Cart is emty"
+        }
     },
     "share": {
       "close": "Close share",
