@@ -298,7 +298,7 @@
     </script>
   </head>
 
-  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %} template-{{template}}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -307,19 +307,20 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% if template!=='cart' %}
+    {%- if template !='cart' -%}
         <a href="/cart" class="link-to-cart">
           {% if cart.empty? %}
-          <p>{{'general.cart.link.empty' | t}}</p>
+          <span class="cart-text">{{'general.cart.link.empty' | t}}</span> <span class="cart-item-count" >{{cart.item_count}}</span>
           {% else %}
-          <p>{{'general.cart.link.filled' | t}}</p> <span class="cart-item-count">{{cart.item_count}}</span>
+          <span class="cart-text">{{'general.cart.link.filled' | t}}</span> <span class="cart-item-count filled">{{cart.item_count}}</span>
           {% endif %}
-        </a>
+        </a> 
     {% else %}
-     <a href="/" class="link-to-home">
-        Link to home
-     </a>
-    {% endif %}
+ 
+    <a href="/" class="link-to-home">
+      Close
+    </a>
+    {%- endif -%}
    
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}

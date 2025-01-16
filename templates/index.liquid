@@ -4,17 +4,17 @@
     <div id="product-images" class="product-images">
         {% for image in mainProduct.images %}
         <div class="single-product-image">
-            <img alt="{{ image.alt }}" src="{{ image |  image_url}}" width="100%" height="" />
+            <img alt="{{ image.alt }}" src="{{ image | image_url:}}" width="" height="" />
         </div>
         {% endfor %}
     </div>
     <div class="product-info">
-        <h1>{{mainProduct.title}}</h1>
+        <h1 class="headline-big">{{mainProduct.title | remove:"Activity Band"}}</h1>
         <div class="meta-data">
             <div class="head-line">
                 <h2>{{ 'general.product.copy.headline' | t}}</h2>
                 <div class="details">
-                    <ul>
+                    <ul class="list-with-stroke">
                         <li>{{ 'general.product.details_list.item1' | t}}</li>
                         <li>{{ 'general.product.details_list.item2' | t}}</li>
                     </ul>

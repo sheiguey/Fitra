@@ -62,6 +62,13 @@
       "reset": "Clear search term"
     },
     "cart": {
+      "title":"Cart",
+      "preoder-info":"All preorders sheep free for this Month",
+      "support_title":"Any question?",
+      "support_email":"support@getfitra.com",
+      "checkout":"Checkout",
+      "empty":"Your cart is empty",
+      "back":"Back to Fitra",
       "view": "View cart ({{ count }})",
       "view_empty_cart": "View cart",
       "item_added": "Item added to your cart",
@@ -69,6 +76,12 @@
           "filled":"Link to your cart",
           "empty":"Your Cart is emty"
         }
+    },
+    "Lines":{
+      "title":"Order Summary",
+      "shipping":"Shipping",
+      "subtotal":"Subtotal",
+      "free":"Free"
     },
     "share": {
       "close": "Close share",
