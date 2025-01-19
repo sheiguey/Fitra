@@ -1,5 +1,5 @@
 <div class="main-product">
-  <div id="product-images" class="product-images">
+  <div id="product-images" class="product-images cart-img">
     <div class="single-product-image">
       <img alt="checkout image" src="{{ 'Hero-Cart.jpg'  |  asset_url}}" width="" height="" />
     </div>
@@ -14,7 +14,7 @@
     
     {% if cart.item_count>0 %}
     <div class="meta-data info-content">
-      <div class="head-line">
+      <div class="head-line head-line-cart">
         <h2>{{'general.cart.preoder-info' | t}}</h2>
         <p>
           {{'general.cart.support_title' | t}}
@@ -22,15 +22,22 @@
             t}}</a>
         </p>
       </div>
-      <div class="description">
+      <div class="description description-cart">
         {% form 'cart', cart %}
         <h3>Oder Summary</h3>
         <ul class="list-with-stroke">
           {% for item in cart.items %}
           <li>
             <p>{% if item.quantity>1 %}{{item.quantity}}x{% endif %}
-              {{item.product.title}}&ndash;{{item.variant.title}}</p>
-            <p>{{item.price | money}}<a class="remove-product" href="{{ item.url_to_remove }}">X</a></p>
+              {{item.product.title}}&ndash;{{item.variant.title}}
+            </p>
+            <p>
+              {{item.price | money}}
+              <span class="remove-product-bloc">
+                <a class="remove-product text-remove" href="{{ item.url_to_remove }}">remove</a>
+                <a class="remove-product link-remove" href="{{ item.url_to_remove }}">X</a>
+              </span>
+            </p>
           </li>
           {% endfor %}
           <li>

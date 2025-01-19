@@ -1,0 +1,31 @@
+{% assign main_product = all_products['fitra-activity-band'] %}
+
+<style type="text/css">
+    .template-404 .title+* {
+        margin-top: 1rem;
+    }
+
+    @media screen and (min-width: 750px) {
+        .template-404 .title+* {
+            margin-top: 2rem;
+        }
+    }
+</style>
+
+<div class="template-404">
+    <div id="product-images" class="product-images">
+        <div class="single-product-image">
+            <img alt="404 images band" src="{{ main_product.images.first | image_url}}" width="" height="" />
+        </div>
+    </div>
+    <div class="content-404">
+            <p>
+                Sorry we can find this page
+            </p>
+            
+            <a href="/">
+                Back to Fitra
+            </a>
+    </div>
+</div>
+ 

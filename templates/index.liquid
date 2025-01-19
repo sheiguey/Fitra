@@ -3,7 +3,7 @@
 <div class="main-product">
     <div id="product-images" class="product-images">
         {% for image in mainProduct.images %}
-        <div class="single-product-image">
+        <div class="single-product-image" {% if image.attached_to_variant? %} data-variant="{{image.variants.first.id}}" {% endif %} style="{% if  forloop.index > 1 %} display:none;{% endif %}" >
             <img alt="{{ image.alt }}" src="{{ image | image_url:}}" width="" height="" />
         </div>
         {% endfor %}
@@ -29,8 +29,8 @@
 
                 <div class="form-wrapper">
                     {% form 'product', mainProduct %}
-                    <label for="SelectedVariant">{{mainProduct.options.first}}</label>
-                    <select id="SelectedVariant" name="id">
+                    <label for="variant-id">{{mainProduct.options.first}}</label>
+                    <select id="variant-id" name="id">
                         {% for variant in mainProduct.variants %}
                         <option value="{{ variant.id }}" >
                             {{variant.title}}
